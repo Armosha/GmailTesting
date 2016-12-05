@@ -41,6 +41,7 @@ public class FactoryDriver {
         driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
         driver.manage().window().maximize();
+        driver.manage().timeouts().setScriptTimeout(30, TimeUnit.SECONDS);
         driver.get(PropertyProvider.getProperty("url"));
         return driver;
     }
@@ -53,7 +54,7 @@ public class FactoryDriver {
     }
 
     public static void closeDriver() {
-        driver.quit();
+      //  driver.quit();
         driver = null;
         log.info("Driver has been closed");
     }

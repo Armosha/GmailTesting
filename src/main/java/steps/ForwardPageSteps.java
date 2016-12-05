@@ -14,10 +14,11 @@ public class ForwardPageSteps extends AbstactStep {
 
     public ForwardPageSteps(WebDriver driver) {
         super(driver);
+        forwardPage = new ForwardPage(driver);
     }
 
     public ForwardPageSteps makeForwarding() throws InterruptedException {
         forwardPage.chooseForwarding(LOGIN_USER3);
-        return null;
+        return this;
     }
 }

@@ -10,7 +10,7 @@ public class checkLetterInTrashAndInbox extends TestBase {
     public void checkMessageInTrash() throws InterruptedException {
         loginSteps.authorizationLikeUser2();
         mailPageSteps.makeForwarding();
-       // forwardPageSteps.makeForwarding();
+       forwardPageSteps.makeForwarding();
     }
 
 }

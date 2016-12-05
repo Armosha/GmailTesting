@@ -1,6 +1,7 @@
 package steps;
 
 import helpers.PropertyProvider;
+import helpers.RandomString;
 import org.openqa.selenium.WebDriver;
 import pages.MailPage;
 
@@ -10,8 +11,8 @@ import pages.MailPage;
  */
 public class MailPageSteps extends AbstactStep {
 
-    private static String SUBJECT_TEXT = "from user1";
-    private static String MESSAGE_TEXT = "Hello, java!";
+    private static String SUBJECT_TEXT = RandomString.getRandomStringEng(8);
+    private static String MESSAGE_TEXT = RandomString.getRandomStringEng(70);
     private static final String LOGIN_USER2 = PropertyProvider.getProperty("login_user2");
     private static final String LOGIN_USER3 = PropertyProvider.getProperty("login_user3");
     private MailPage mailPage;
@@ -26,7 +27,7 @@ public class MailPageSteps extends AbstactStep {
         return this;
     }
 
-    public LoginSteps logOutFromEmailBox() {
+    public LoginSteps logOutFromEmailBox() throws InterruptedException {
         mailPage.logOut();
         return new LoginSteps(driver);
     }

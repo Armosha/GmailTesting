@@ -1,9 +1,11 @@
 package pages;
 
+//import helpers.ExplicitWait;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 /**
  * Created by Iryna_Filipava1 on 12/2/2016.
@@ -62,7 +64,7 @@ public class MailPage extends PageObject {
     @FindBy(xpath = "//div[@class='aos T-I-J3 J-J5-Ji']")//Settings
     private WebElement settingsButton;
 
-    @FindBy(xpath = "//div[@class='J-N-Jz' and text()='Настройки']")//Settings
+    @FindBy(xpath = "//div[@id='ms']/div")//Settings
     private WebElement settingsText;
 
 
@@ -74,8 +76,9 @@ public class MailPage extends PageObject {
         sendMessageButton.click();
     }
 
-    public void logOut() {
+    public void logOut() throws InterruptedException {
         logOutFlag.click();
+        wait.until(ExpectedConditions.visibilityOf(logOutButton));
         logOutButton.click();
         try {
             alert = driver.switchTo().alert();
@@ -100,9 +103,10 @@ public class MailPage extends PageObject {
     }
 
     public void chooseForwarding() throws InterruptedException {
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         settingsButton.click();
+        Thread.sleep(3000);
         settingsText.click();
-        Thread.sleep(1000);
+        Thread.sleep(3000);
     }
 }
