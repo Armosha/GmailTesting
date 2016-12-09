@@ -3,7 +3,7 @@ package helpers;
 
 public class ConstantContainer {
 
-    public static final String SUBJECT_TEXT = "from user1";
+    public static final String SUBJECT_TEXT = RandomString.getRandomStringEng(8);
     public static final String MESSAGE_TEXT = RandomString.getRandomStringEng(70);
     public static final String SPAMPAGE_EXPECTED_RESULT = PropertyProvider.getProperty("user_name");
     public static final String LOGIN_USER1 = PropertyProvider.getProperty("login_user1");

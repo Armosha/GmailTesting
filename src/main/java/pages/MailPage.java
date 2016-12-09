@@ -66,17 +66,17 @@ public class MailPage extends PageObject {
     private WebElement settingsText;
 
 
-    public void writeMessageToUser2(String login, String password, String message) {
+    public void writeMessageToUser2(String login, String subject, String message) {
         writeButton.click();
         rowForInputAddress.sendKeys(login);
-        rowForInputSubject.sendKeys(password);
+        rowForInputSubject.sendKeys(subject);
         areaForWritingMessage.sendKeys(message);
         sendMessageButton.click();
     }
 
     public void logOut() throws InterruptedException {
         logOutFlag.click();
-        Thread.sleep(3000);
+      //  Thread.sleep(3000);
         wait.waitForElementIsClickable(logOutButton);
         logOutButton.click();
         /*try {

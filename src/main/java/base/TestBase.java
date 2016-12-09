@@ -1,9 +1,7 @@
 package base;
 
-import helpers.ExplicitWait;
 import helpers.FactoryDriver;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import steps.ForwardPageSteps;

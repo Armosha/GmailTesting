@@ -36,6 +36,7 @@ public class ForwardPage extends PageObject {
     public void chooseForwarding(String login) throws InterruptedException {
 
         forwardingPopImap.click();
+       // Thread.sleep(1000);
         //wait.until(ExpectedConditions.visibilityOf(setForwardbutton));
         wait.waitForElementIsClickable(setForwardbutton);
         setForwardbutton.click();
