@@ -1,6 +1,7 @@
 package pages;
 
 //import helpers.ExplicitWait;
+import helpers.ExplicitWait;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -12,18 +13,16 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  */
 public abstract class PageObject {
 
-    protected Alert alert;
     WebDriver driver;
-    protected WebDriverWait wait;
+    protected ExplicitWait wait;
     protected Actions actions;
-
+    protected Alert alert;
 
 
     public PageObject(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(this.driver, this);
-        wait = new WebDriverWait(this.driver, 10);
-        //   actions = new Actions(this.driver);
-     //   wait = new ExplicitWait(this.driver);
+        wait = new ExplicitWait(driver);
+         actions = new Actions(this.driver);
     }
 }

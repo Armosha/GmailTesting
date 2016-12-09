@@ -1,16 +1,17 @@
-/* package helpers;
+package helpers;
 
 
-  public class ConstantContainer {
+public class ConstantContainer {
 
-  private static String SUBJECT_TEXT = "from user1";
+    public static final String SUBJECT_TEXT = "from user1";
+    public static final String MESSAGE_TEXT = RandomString.getRandomStringEng(70);
+    public static final String SPAMPAGE_EXPECTED_RESULT = PropertyProvider.getProperty("user_name");
+    public static final String LOGIN_USER1 = PropertyProvider.getProperty("login_user1");
+    public static final String LOGIN_USER2 = PropertyProvider.getProperty("login_user2");
+    public static final String LOGIN_USER3 = PropertyProvider.getProperty("login_user3");
+    public static final String PASSWORD_USER1 = PropertyProvider.getProperty("password_user1");
+    public static final String PASSWORD_USER2 = PropertyProvider.getProperty("password_user2");
+    public static final String PASSWORD_USER3 = PropertyProvider.getProperty("password_user3");
 
-    public static String getSubjectText() {
-        return SUBJECT_TEXT;
-    }
 
-    public static void setSubjectText(String subjectText) {
-        SUBJECT_TEXT = subjectText;
-    }
 }
-*/

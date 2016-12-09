@@ -1,5 +1,6 @@
 package steps;
 
+import helpers.ConstantContainer;
 import helpers.PropertyProvider;
 import org.openqa.selenium.WebDriver;
 import pages.ForwardPage;
@@ -10,7 +11,6 @@ import pages.ForwardPage;
 public class ForwardPageSteps extends AbstactStep {
 
     private ForwardPage forwardPage;
-    private static final String LOGIN_USER3 = PropertyProvider.getProperty("login_user3");
 
     public ForwardPageSteps(WebDriver driver) {
         super(driver);
@@ -18,7 +18,8 @@ public class ForwardPageSteps extends AbstactStep {
     }
 
     public ForwardPageSteps makeForwarding() throws InterruptedException {
-        forwardPage.chooseForwarding(LOGIN_USER3);
+        logger.info("make forwarding");
+        forwardPage.chooseForwarding(ConstantContainer.LOGIN_USER3);
         return this;
     }
 }

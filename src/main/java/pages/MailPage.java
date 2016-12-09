@@ -1,11 +1,9 @@
 package pages;
 
-//import helpers.ExplicitWait;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 /**
  * Created by Iryna_Filipava1 on 12/2/2016.
@@ -78,9 +76,10 @@ public class MailPage extends PageObject {
 
     public void logOut() throws InterruptedException {
         logOutFlag.click();
-        wait.until(ExpectedConditions.visibilityOf(logOutButton));
+        Thread.sleep(3000);
+        wait.waitForElementIsClickable(logOutButton);
         logOutButton.click();
-        try {
+        /*try {
             alert = driver.switchTo().alert();
             String alertText = alert.getText();
             if (alertText.contains("Выполняется запрос к серверу. Если закрыть эту страницу, изменения не будут сохранены.\n" +
@@ -88,7 +87,7 @@ public class MailPage extends PageObject {
                 alert.accept();
             }
         } catch (NoAlertPresentException e) {
-        }
+        }*/
     }
 
     public void markAsSpam() {
@@ -103,10 +102,8 @@ public class MailPage extends PageObject {
     }
 
     public void chooseForwarding() throws InterruptedException {
-        Thread.sleep(3000);
         settingsButton.click();
-        Thread.sleep(3000);
+        wait.waitForElementIsClickable(settingsText);
         settingsText.click();
-        Thread.sleep(3000);
     }
 }

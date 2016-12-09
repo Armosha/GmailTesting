@@ -39,5 +39,4 @@ public class LoginPage extends PageObject {
         }
         signInButton.click();
     }
-
 }

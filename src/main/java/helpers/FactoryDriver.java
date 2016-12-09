@@ -1,7 +1,6 @@
 package helpers;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Contract;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -16,7 +15,7 @@ public class FactoryDriver {
     private static final String GECKODRIVER_EXE_PATH = "src\\driver\\geckodriver.exe";
     private static final String WEBDRIVER_CHROME_DRIVER = "webdriver.chrome.driver";
     private static final String CHROMEDRIVER_EXE_PATH = "src\\driver\\chromedriver.exe";
-    private static final Logger log = LogManager.getRootLogger();
+    private static final Logger logger = Logger.getLogger("gmailLogger");
     private static WebDriver driver;
 
     private FactoryDriver() {
@@ -27,19 +26,18 @@ public class FactoryDriver {
         switch (type) {
             case CHROME:
                 driver = createChromeDriver();
-                log.info("Chrome driver created");
+                logger.info("Chrome driver created");
                 break;
             case FIREFOX:
                 driver = createFirefoxDriver();
-                log.info("Firefox driver created");
+                logger.info("Firefox driver created");
                 break;
             default:
                 driver = createFirefoxDriver();
-                log.info("Firefox driver created");
+                logger.info("Firefox driver created");
 
         }
-        driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
-        driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         driver.manage().timeouts().setScriptTimeout(30, TimeUnit.SECONDS);
         driver.get(PropertyProvider.getProperty("url"));
@@ -56,7 +54,7 @@ public class FactoryDriver {
     public static void closeDriver() {
       //  driver.quit();
         driver = null;
-        log.info("Driver has been closed");
+        logger.info("Driver has been closed");
     }
 
     @Contract(" -> !null")

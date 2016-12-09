@@ -1,10 +1,13 @@
 import base.TestBase;
+import helpers.MyListener;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 /**
  * Created by Iryna_Filipava1 on 12/2/2016.
  */
+@Listeners(MyListener.class)
 public class CheckLetterAsSpam extends TestBase {
 
     @Test(description = "Check letter from user1 in Spam")

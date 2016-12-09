@@ -13,9 +13,12 @@ public class SpamObject extends PageObject {
         super(driver);
     }
 
-    @FindBy(xpath = "//span[@name = 'Selya Selenium']")
+
+    @FindBy(xpath = "//span[@class = 'zF']")
     private WebElement username;
 
+ //   @FindBy(xpath = "//span[@name = 'Selya Selenium']")
+  //  private WebElement username;
 
     public String takeUserName() {
         String result = username.getText().toString();

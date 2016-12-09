@@ -4,7 +4,6 @@ import org.openqa.selenium.NoSuchWindowException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 /**
  * Created by Iryna_Filipava1 on 12/2/2016.
@@ -37,13 +36,18 @@ public class ForwardPage extends PageObject {
     public void chooseForwarding(String login) throws InterruptedException {
 
         forwardingPopImap.click();
-        wait.until(ExpectedConditions.visibilityOf(setForwardbutton));
+        //wait.until(ExpectedConditions.visibilityOf(setForwardbutton));
+        wait.waitForElementIsClickable(setForwardbutton);
         setForwardbutton.click();
-        wait.until(ExpectedConditions.visibilityOf(forwardingAddressArea));
+       // wait.until(ExpectedConditions.visibilityOf(forwardingAddressArea));
+        wait.waitForElementIsClickable(forwardingAddressArea);
         forwardingAddressArea.sendKeys(login);
+
+
+
         String forward = driver.getWindowHandle();
         nextStepButton.click();
-        Thread.sleep(3000);
+      //  Thread.sleep(3000);
        try {
            driver.switchTo().window("Подтвердите адрес пересылки - Google Chrome");
        }catch (NoSuchWindowException e){

@@ -1,8 +1,8 @@
 package steps;
 
+import helpers.ExplicitWait;
 import helpers.FactoryDriver;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 
 /**
@@ -11,8 +11,7 @@ import org.openqa.selenium.WebDriver;
 public abstract class AbstactStep {
 
     protected WebDriver driver;
-    protected static final Logger log = LogManager.getRootLogger();
-
+    protected Logger logger = Logger.getLogger("gmailLogger");
 
     public AbstactStep(WebDriver driver) {
         this.driver = FactoryDriver.getInstance();

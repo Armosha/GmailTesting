@@ -1,5 +1,6 @@
 package steps;
 
+import helpers.ConstantContainer;
 import helpers.PropertyProvider;
 import org.openqa.selenium.WebDriver;
 import pages.SpamObject;
@@ -10,8 +11,6 @@ import pages.SpamObject;
 public class SpamSteps extends AbstactStep {
 
     private SpamObject spamObject;
-    private static String SPAMPAGE_EXPECTED_RESULT = PropertyProvider.getProperty("user_name");
-
 
     public SpamSteps(WebDriver driver) {
         super(driver);
@@ -19,7 +18,8 @@ public class SpamSteps extends AbstactStep {
     }
 
     public boolean checkLetterInSpam() {
-        SPAMPAGE_EXPECTED_RESULT.equalsIgnoreCase(spamObject.takeUserName());
+        logger.info("check letter into spam folder");
+        ConstantContainer.SPAMPAGE_EXPECTED_RESULT.equalsIgnoreCase(spamObject.takeUserName());
         return true;
     }
 }

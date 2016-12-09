@@ -1,9 +1,7 @@
 package base;
 
-//import helpers.ExplicitWait;
+import helpers.ExplicitWait;
 import helpers.FactoryDriver;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
@@ -12,6 +10,8 @@ import steps.ForwardPageSteps;
 import steps.LoginSteps;
 import steps.MailPageSteps;
 import steps.SpamSteps;
+import org.apache.log4j.Logger;
+
 
 /**
  * Created by Iryna_Filipava1 on 12/2/2016.
@@ -32,7 +32,7 @@ public class TestBase {
         this.mailPageSteps = new MailPageSteps(driver);
         this.spamSteps = new SpamSteps(driver);
         this.forwardPageSteps = new ForwardPageSteps(driver);
-        this.log = LogManager.getRootLogger();
+        this.log = Logger.getLogger("gmailLogger");
     }
 
 

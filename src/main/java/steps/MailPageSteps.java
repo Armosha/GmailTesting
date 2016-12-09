@@ -1,5 +1,6 @@
 package steps;
 
+import helpers.ConstantContainer;
 import helpers.PropertyProvider;
 import helpers.RandomString;
 import org.openqa.selenium.WebDriver;
@@ -11,10 +12,6 @@ import pages.MailPage;
  */
 public class MailPageSteps extends AbstactStep {
 
-    private static String SUBJECT_TEXT = RandomString.getRandomStringEng(8);
-    private static String MESSAGE_TEXT = RandomString.getRandomStringEng(70);
-    private static final String LOGIN_USER2 = PropertyProvider.getProperty("login_user2");
-    private static final String LOGIN_USER3 = PropertyProvider.getProperty("login_user3");
     private MailPage mailPage;
 
     public MailPageSteps(WebDriver driver) {
@@ -23,26 +20,31 @@ public class MailPageSteps extends AbstactStep {
     }
 
     public MailPageSteps sendMessageToUser2() {
-        mailPage.writeMessageToUser2(LOGIN_USER2, SUBJECT_TEXT, MESSAGE_TEXT);
+        logger.info("write and send message to user2");
+        mailPage.writeMessageToUser2(ConstantContainer.LOGIN_USER2, ConstantContainer.SUBJECT_TEXT, ConstantContainer.MESSAGE_TEXT);
         return this;
     }
 
     public LoginSteps logOutFromEmailBox() throws InterruptedException {
+        logger.info("log out email box");
         mailPage.logOut();
         return new LoginSteps(driver);
     }
 
     public MailPageSteps markLetterAsSpam() {
+        logger.info("mark letter as spam");
         mailPage.markAsSpam();
         return this;
     }
 
     public SpamSteps moveToSpamPage() {
+        logger.info("move to spam page");
         mailPage.goToSpam();
         return new SpamSteps(driver);
     }
 
     public ForwardPageSteps makeForwarding() throws InterruptedException {
+        logger.info("move to forward page");
         mailPage.chooseForwarding();
         return new ForwardPageSteps(driver);
     }
