@@ -107,7 +107,6 @@ public class MailPage extends PageObject {
         settingsButton.click();
         wait.waitForElementIsClickable(settingsText);
         settingsText.click();
-        Thread.sleep(2000);
     }
 
     public void sentMessageButtonClick(){

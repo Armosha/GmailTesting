@@ -32,31 +32,25 @@ public class SettingPage extends PageObject {
     @FindBy(xpath = "//button[@name='ok']")
     private WebElement okButton;
 
-
     public void chooseForwarding(String login) throws InterruptedException {
 
         forwardingPopImap.click();
-        Thread.sleep(2000);
-        //wait.until(ExpectedConditions.visibilityOf(setForwardbutton));
         wait.waitForElementIsClickable(setForwardbutton);
         setForwardbutton.click();
-       // wait.until(ExpectedConditions.visibilityOf(forwardingAddressArea));
         wait.waitForElementIsClickable(forwardingAddressArea);
         forwardingAddressArea.sendKeys(login);
 
 
-
         String forward = driver.getWindowHandle();
         nextStepButton.click();
-      //  Thread.sleep(3000);
-       try {
-           driver.switchTo().window("Подтвердите адрес пересылки - Google Chrome");
-       }catch (NoSuchWindowException e){
-           System.out.println(e);
-       }
+        try {
+            driver.switchTo().window("Подтвердите адрес пересылки - Google Chrome");
+        } catch (NoSuchWindowException e) {
+            System.out.println(e);
+        }
         helpButton.click();
         driver.switchTo().window(forward);
         okButton.click();
     }
-}
 
+}

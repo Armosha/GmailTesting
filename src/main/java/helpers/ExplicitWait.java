@@ -30,6 +30,11 @@ public class ExplicitWait {
         wait.until(ExpectedConditions.invisibilityOfElementLocated(by));
     }
 
+
+   // public void untilLoadMailPage() {
+       // wait.until(ExpectedConditions.titleContains(PropertyProvider.getProperty("mailboxtitlewait")));
+   // }
+
    public void waitForElementIsClickable(WebElement element) {
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }

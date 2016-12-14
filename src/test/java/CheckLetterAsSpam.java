@@ -13,11 +13,11 @@ public class CheckLetterAsSpam extends TestBase {
     @Test(description = "Check letter from user1 in Spam")
         public void checkMessageInSpam() throws InterruptedException {
         loginSteps.authorizationLikeUser1();
-        mailPageSteps.sendMessageToUser2();
-        mailPageSteps.logOutFromEmailBox();
+        mailPageSteps.sendMessageToUser2()
+                .logOutFromEmailBox();
         loginSteps.authorizationLikeUser2();
-        mailPageSteps.markLetterAsSpam();
-        mailPageSteps.moveToSpamPage();
+        mailPageSteps.markLetterAsSpam()
+                .moveToSpamPage();
         Assert.assertTrue(spamSteps.checkLetterInSpam());
     }
 

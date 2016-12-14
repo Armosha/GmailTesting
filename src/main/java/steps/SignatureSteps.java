@@ -8,7 +8,6 @@ import pages.SignaturePage;
 public class SignatureSteps extends AbstactStep {
 
     private SignaturePage signaturePage;
-
     LoginSteps loginSteps = new LoginSteps(driver);
     MailPageSteps mailPageSteps = new MailPageSteps(driver);
 
@@ -18,16 +17,25 @@ public class SignatureSteps extends AbstactStep {
     }
 
     public MailPageSteps setSignature() throws InterruptedException {
+        logger.info("authorization like User1");
         loginSteps.authorizationLikeUser1();
+        logger.info("get setting page");
         mailPageSteps.getSettingPage();
-        signaturePage.setSignatureTextArea(ConstantContainer.SIGNATURE1_TEXT);
-        mailPageSteps.sendMessageToUser2();
+        logger.info("set signature in textArea and check 'save' button");
+        signaturePage.setSignatureInTextArea(ConstantContainer.SIGNATURE1_TEXT);
         return new MailPageSteps(driver);
     }
 
-    public SentSteps getSentPage(){
-        mailPageSteps.goToSentPage();
-        return new SentSteps(driver);
+    public boolean checkSettingTitle() {
+        logger.info("check settings' page title");
+        driver.getTitle().toString().equalsIgnoreCase(ConstantContainer.SETTINGTITLE_TEXT);
+        return true;
     }
+
+    public boolean checkSaveSetingButton() {
+        signaturePage.checkigsaveChangesButton();
+        return true;
+    }
+
 }
 

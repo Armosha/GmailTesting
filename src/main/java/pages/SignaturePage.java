@@ -16,30 +16,26 @@ public class SignaturePage extends PageObject {
     @FindBy(xpath = "//div[@role='textbox']")
     private WebElement signatureTextArea;
 
-    @FindBy(xpath = "//td[2]/label[contains(text(), 'Добавлять')]")
+    @FindBy(css = "input[class='aJb']")
     private WebElement addSignaturebox;
 
     @FindBy(xpath = "//button[@guidedhelpid='save_changes_button']") //saveChangesButton
     private WebElement saveChangesButton;
 
+    @FindBy(xpath = "//span[@class='rc' and text() = 'Подпись:']")
+    private WebElement tempbutton;
 
-
-
-    //td[2]/label[contains(text(), 'Добавлять эту подпись')]
-  //  @FindBy(css = "input[class='aJb']")
-   // private WebElement addSignaturebox;
-
-    public void setSignatureTextArea(String signature) throws InterruptedException {
+    public void setSignatureInTextArea(String signature) throws InterruptedException {
         signatureTextArea.click();
         signatureTextArea.clear();
         signatureTextArea.sendKeys(signature);
-        Thread.sleep(2000);
-        addSignaturebox.click();
-        Thread.sleep(2000);
-        saveChangesButton.click();
-        Thread.sleep(2000);
+        actions.click(tempbutton).build().perform();
+        actions.click(saveChangesButton).build().perform();
+    }
 
-
+    public boolean checkigsaveChangesButton() {
+        saveChangesButton.isEnabled();
+        return false;
     }
 }
 

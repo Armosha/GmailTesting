@@ -14,10 +14,13 @@ import org.testng.annotations.Test;
 public class CheckSignature extends TestBase {
 
     public void checkSignature() throws InterruptedException {
+        Assert.assertTrue(signaturesteps.checkSettingTitle());
         signaturesteps.setSignature();
-        signaturesteps.getSentPage();
+        Assert.assertTrue(signaturesteps.checkSaveSetingButton());
+        mailPageSteps.sendMessageToUser2();
+        mailPageSteps.goToSentPage();
         sentPages.openMessagefromUser1();
         Assert.assertTrue(sentPages.checkSignature());
     }
-
 }
+

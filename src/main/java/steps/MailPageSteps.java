@@ -42,15 +42,15 @@ public class MailPageSteps extends AbstactStep {
     }
 
     public SettingPageSteps getSettingPage() throws InterruptedException {
-        logger.info("move to forward page");
+        logger.info("move to setting page");
         mailPage.getSetting();
         return new SettingPageSteps(driver);
     }
 
-    public SentSteps goToSentPage() {
+    public MailPageSteps goToSentPage() {
         logger.info("move to sent page");
         mailPage.sentMessageButtonClick();
-        return new SentSteps(driver);
+        return this;
     }
 
 }

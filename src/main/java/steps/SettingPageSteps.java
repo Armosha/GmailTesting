@@ -11,7 +11,6 @@ public class SettingPageSteps extends AbstactStep {
 
     private SettingPage settingPage;
 
-
     public SettingPageSteps(WebDriver driver) {
         super(driver);
         settingPage = new SettingPage(driver);
@@ -22,4 +21,5 @@ public class SettingPageSteps extends AbstactStep {
         settingPage.chooseForwarding(ConstantContainer.LOGIN_USER3);
         return this;
     }
+
 }
