@@ -4,10 +4,7 @@ import helpers.FactoryDriver;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import steps.ForwardPageSteps;
-import steps.LoginSteps;
-import steps.MailPageSteps;
-import steps.SpamSteps;
+import steps.*;
 import org.apache.log4j.Logger;
 
 
@@ -21,7 +18,9 @@ public class TestBase {
     protected LoginSteps loginSteps;
     protected MailPageSteps mailPageSteps;
     protected SpamSteps spamSteps;
-    protected ForwardPageSteps forwardPageSteps;
+    protected SettingPageSteps settingPage;
+    protected SignatureSteps signaturesteps;
+    protected SentSteps sentPages;
 
     @BeforeMethod
     public void setUp() throws Exception {
@@ -29,7 +28,9 @@ public class TestBase {
         this.loginSteps = new LoginSteps(driver);
         this.mailPageSteps = new MailPageSteps(driver);
         this.spamSteps = new SpamSteps(driver);
-        this.forwardPageSteps = new ForwardPageSteps(driver);
+        this.settingPage = new SettingPageSteps(driver);
+        this.signaturesteps = new SignatureSteps(driver);
+        this.sentPages = new SentSteps(driver);
         this.log = Logger.getLogger("gmailLogger");
     }
 

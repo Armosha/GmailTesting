@@ -1,8 +1,6 @@
 package steps;
 
 import helpers.ConstantContainer;
-import helpers.PropertyProvider;
-import helpers.RandomString;
 import org.openqa.selenium.WebDriver;
 import pages.MailPage;
 
@@ -43,10 +41,16 @@ public class MailPageSteps extends AbstactStep {
         return new SpamSteps(driver);
     }
 
-    public ForwardPageSteps makeForwarding() throws InterruptedException {
+    public SettingPageSteps getSettingPage() throws InterruptedException {
         logger.info("move to forward page");
-        mailPage.chooseForwarding();
-        return new ForwardPageSteps(driver);
+        mailPage.getSetting();
+        return new SettingPageSteps(driver);
+    }
+
+    public SentSteps goToSentPage() {
+        logger.info("move to sent page");
+        mailPage.sentMessageButtonClick();
+        return new SentSteps(driver);
     }
 
 }

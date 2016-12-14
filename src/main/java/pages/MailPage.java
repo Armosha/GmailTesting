@@ -1,6 +1,5 @@
 package pages;
 
-import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -27,8 +26,11 @@ public class MailPage extends PageObject {
     @FindBy(xpath = "//div[@role='textbox']")
     private WebElement areaForWritingMessage;
 
-    @FindBy(xpath = "//div[@role='button' and text()='Отправить']")//Send
+    @FindBy(xpath = "//div[@role='button' and text()='Отправить']") //Send
     private WebElement sendMessageButton;
+
+    @FindBy(xpath = "//a[contains(text(), 'Отправленные')]") //Send
+    private WebElement sentMessageButton;
 
     //logout
     @FindBy(css = ".gb_8a.gbii")
@@ -58,7 +60,7 @@ public class MailPage extends PageObject {
     @FindBy(xpath = "//a[contains(text(), 'Спам')]")//Spam
     private WebElement spamActionButton;
 
-    //go to Forwarding Page
+    //go to Setting Page
     @FindBy(xpath = "//div[@class='aos T-I-J3 J-J5-Ji']")//Settings
     private WebElement settingsButton;
 
@@ -101,9 +103,15 @@ public class MailPage extends PageObject {
         spamActionButton.click();
     }
 
-    public void chooseForwarding() throws InterruptedException {
+    public void getSetting() throws InterruptedException {
         settingsButton.click();
         wait.waitForElementIsClickable(settingsText);
         settingsText.click();
+        Thread.sleep(2000);
     }
+
+    public void sentMessageButtonClick(){
+        sentMessageButton.click();
+    }
+
 }
