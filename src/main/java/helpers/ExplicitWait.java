@@ -33,6 +33,5 @@ public class ExplicitWait {
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
-
 }
 

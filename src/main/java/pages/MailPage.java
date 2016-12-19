@@ -1,6 +1,5 @@
 package pages;
 
-import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -29,6 +28,10 @@ public class MailPage extends PageObject {
 
     @FindBy(xpath = "//div[@role='button' and text()='Отправить']")//Send
     private WebElement sendMessageButton;
+
+    @FindBy(xpath = "//a[contains(text(), 'Отправленные')]") //Send
+    private WebElement sentMessageButton;
+
 
     //logout
     @FindBy(css = ".gb_8a.gbii")
@@ -66,26 +69,50 @@ public class MailPage extends PageObject {
     private WebElement settingsText;
 
 
-    public void writeMessageToUser2(String login, String password, String message) {
+    // mark message and check color
+    @FindBy(xpath = "//td[@class='apU xY']") //Star
+    private WebElement yellowStarFlag;
+
+    @FindBy(xpath = "//span[@class='aXw T-KT']") //Star
+    private WebElement commaStarFlag;
+
+    //span[@class='aXw T-KT']
+
+    @FindBy(xpath = "//a[contains(text(), 'Помеченные')]")
+    private WebElement markLettersButton;
+
+
+    public void composeButtonClick() {
         writeButton.click();
+    }
+
+    public void typeLogin(String login) {
         rowForInputAddress.sendKeys(login);
-        rowForInputSubject.sendKeys(password);
+    }
+
+    public void typeSubject(String subject) {
+        rowForInputSubject.sendKeys(subject);
+    }
+
+    public void typeMessage(String message) {
         areaForWritingMessage.sendKeys(message);
+    }
+
+    public void sendMessageButtonClick() {
         sendMessageButton.click();
     }
 
-    public void logOut() {
+    public void generalAccountButtonClick() {
         logOutFlag.click();
+        wait.waitForElementIsClickable(logOutButton);
+    }
+
+    public void logOut() {
         logOutButton.click();
-        try {
-            alert = driver.switchTo().alert();
-            String alertText = alert.getText();
-            if (alertText.contains("Выполняется запрос к серверу. Если закрыть эту страницу, изменения не будут сохранены.\n" +
-                    "Письмо не было отправлено.")) {
-                alert.accept();
-            }
-        } catch (NoAlertPresentException e) {
-        }
+    }
+
+    public void findLetter() {
+
     }
 
     public void markAsSpam() {
@@ -105,4 +132,22 @@ public class MailPage extends PageObject {
         settingsText.click();
         Thread.sleep(1000);
     }
+
+    public void sentMessageButtonClick() {
+        sentMessageButton.click();
+    }
+
+    public void clickStarFlag() {
+        commaStarFlag.click();
+        markLettersButton.click();
+    }
+
+    public String getStatus() {
+        return yellowStarFlag.getAttribute("title");
+    }
+
+    public String getStarColor() {
+        return yellowStarFlag.getCssValue("color");
+    }
+
 }

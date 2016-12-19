@@ -11,7 +11,7 @@ import org.openqa.selenium.WebDriver;
 public abstract class AbstactStep {
 
     protected WebDriver driver;
-    protected static final Logger log = LogManager.getRootLogger();
+    protected static final Logger logger = LogManager.getRootLogger();
 
 
     public AbstactStep(WebDriver driver) {

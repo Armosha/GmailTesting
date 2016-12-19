@@ -1,6 +1,9 @@
 package steps;
 
 import helpers.PropertyProvider;
+import EntitySource.User;
+import helpers.ConstantContainer;
+import helpers.RandomString;
 import org.openqa.selenium.WebDriver;
 import pages.MailPage;
 
@@ -21,15 +24,26 @@ public class MailPageSteps extends AbstactStep {
         mailPage = new MailPage(driver);
     }
 
-    public MailPageSteps sendMessageToUser2() {
-        mailPage.writeMessageToUser2(LOGIN_USER2, SUBJECT_TEXT, MESSAGE_TEXT);
-        return this;
+
+    public String sendMessageToUser(User user) {
+        logger.info("write and send message to secondUser");
+        String subject = "Subject" + RandomString.getRandomStringEng(4);
+        mailPage.composeButtonClick();
+        mailPage.typeLogin(user.getLogin());
+        mailPage.typeSubject(subject);
+        mailPage.typeMessage(ConstantContainer.MESSAGE_TEXT);
+        mailPage.sendMessageButtonClick();
+        return subject;
     }
 
     public LoginSteps logOutFromEmailBox() {
+        logger.info("log out email box");
+        mailPage.generalAccountButtonClick();
         mailPage.logOut();
         return new LoginSteps(driver);
     }
+
+
 
     public MailPageSteps markLetterAsSpam() {
         mailPage.markAsSpam();
@@ -44,6 +58,24 @@ public class MailPageSteps extends AbstactStep {
     public ForwardPageSteps makeForwarding() throws InterruptedException {
         mailPage.chooseForwarding();
         return new ForwardPageSteps(driver);
+    }
+
+    public StarredPageSteps goToStarredPage() {
+        logger.info("move to starred page");
+        mailPage.clickStarFlag();
+        return new StarredPageSteps(driver);
+    }
+
+    public boolean chekStarColor() {
+        logger.info("get star color");
+        mailPage.getStarColor().contains("#222");
+        return true;
+    }
+
+    public boolean chekStatus() {
+        logger.info("check status");
+        mailPage.getStatus().contains("Помеченные");
+        return true;
     }
 
 }

@@ -1,8 +1,9 @@
 package steps;
 
 import helpers.PropertyProvider;
-import org.openqa.selenium.WebDriver;
 import pages.LoginPage;
+import EntitySource.User;
+import org.openqa.selenium.WebDriver;
 
 /**
  * Created by Iryna_Filipava1 on 12/2/2016.
@@ -23,21 +24,27 @@ public class LoginSteps extends AbstactStep {
         loginPage = new LoginPage(driver);
     }
 
-    public MailPageSteps authorizationLikeUser1() throws InterruptedException {
-        log.info("Authorization");
-        loginPage.loginIntoGmailPostBox(LOGIN_USER1, PASSWORD_USER1);
+    public MailPageSteps authorizationLikeUser(User user) {
+        logger.info("Authorization");
+        loginPage.findLoginField();
+        loginPage.typeLoginIntoLoginField(user.getLogin());
+        loginPage.moveToNextPageButton();
+        loginPage.typePasswordIntoPasswordField(user.getPassword());
+        loginPage.clickStayInSystemBox();
+        return new MailPageSteps(driver);
+    }
+}
+
+
+/* public MailPageSteps authorizationLikeUser1() throws InterruptedException {
+        logger.info("Authorization");
+        loginPage.loginIntoGmailPostBox(ConstantContainer.LOGIN_USER1, ConstantContainer.PASSWORD_USER1);
         return new MailPageSteps(driver);
     }
 
     public MailPageSteps authorizationLikeUser2() throws InterruptedException {
-        log.info("Authorization");
-        loginPage.loginIntoGmailPostBox(LOGIN_USER2, PASSWORD_USER2);
+        logger.info("Authorization");
+        loginPage.loginIntoGmailPostBox(ConstantContainer.LOGIN_USER2, ConstantContainer.PASSWORD_USER2);
+>>>>>>> Stashed changes
         return new MailPageSteps(driver);
-    }
-
-    public MailPageSteps authorizationLikeUser3() throws InterruptedException {
-        log.info("Authorization");
-        loginPage.loginIntoGmailPostBox(LOGIN_USER3, PASSWORD_USER3);
-        return new MailPageSteps(driver);
-    }
-}
+    }*/
