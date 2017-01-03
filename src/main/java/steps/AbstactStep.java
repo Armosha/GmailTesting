@@ -1,9 +1,9 @@
 package steps;
 
 import helpers.FactoryDriver;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
+import org.apache.log4j.Logger;
+
 
 /**
  * Created by Iryna_Filipava1 on 12/2/2016.
@@ -11,7 +11,8 @@ import org.openqa.selenium.WebDriver;
 public abstract class AbstactStep {
 
     protected WebDriver driver;
-    protected static final Logger logger = LogManager.getRootLogger();
+    Logger logger = Logger.getLogger("gmailLogger");//TODO
+
 
 
     public AbstactStep(WebDriver driver) {

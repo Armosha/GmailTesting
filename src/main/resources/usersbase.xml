@@ -1,18 +1,19 @@
 <?xml version="1.0"?>
 <users>
     <user>
+        <id>firstUser</id>
         <login>seleniumtests60@gmail.com</login>
         <password>060788avavav</password>
     </user>
-
     <user>
+        <id>secondUser</id>
         <login>seleniumtests70@gmail.com</login>
         <password>060788avavav</password>
     </user>
 
     <user>
-        <login>selenium50@gmail.com</login>
+        <id>thirdUser</id>
+        <login>seleniumtests50@gmail.com</login>
         <password>060788avavav</password>
     </user>
-
 </users>

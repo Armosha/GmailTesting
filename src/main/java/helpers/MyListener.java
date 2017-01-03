@@ -16,7 +16,7 @@ import java.io.IOException;
  */
 public class MyListener extends TestListenerAdapter {
 
-    String filePath = "C:/Users/Iryna_Filipava1/Work/\\SCREENSHOTS\\";
+    String filePath = "./target/screenshots";
     Logger logger = Logger.getLogger("gmailLogger");
     WebDriver driver;
 
@@ -36,9 +36,7 @@ public class MyListener extends TestListenerAdapter {
             FileUtils.copyFile(scrFile, new File(filePath + methodName + ".png"));
             System.out.println("*** Placed screenshot in " + filePath + " ***");
         } catch (IOException e) {
-            e.printStackTrace();
             logger.info(e);
         }
     }
-
 }

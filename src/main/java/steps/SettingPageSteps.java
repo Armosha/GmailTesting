@@ -1,6 +1,6 @@
 package steps;
 
-import helpers.ConstantContainer;
+import entitySource.User;
 import org.openqa.selenium.WebDriver;
 import pages.SettingPage;
 
@@ -11,14 +11,15 @@ public class SettingPageSteps  extends AbstactStep {
 
     private SettingPage settingPage;
 
+
     public SettingPageSteps(WebDriver driver) {
         super(driver);
         settingPage = new SettingPage(driver);
     }
 
-    public SettingPageSteps makeForwarding() throws InterruptedException {
+    public SettingPageSteps makeForwarding(User user) throws InterruptedException {
         logger.info("make forwarding");
-        settingPage.chooseForwarding(ConstantContainer.LOGIN_USER3);
+        settingPage.chooseForwarding(user.getLogin());
         return this;
     }
 

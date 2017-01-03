@@ -57,13 +57,11 @@ public class FactoryDriver {
         logger.info("Driver has been closed");
     }
 
-    @Contract(" -> !null")
     private static WebDriver createFirefoxDriver() {
         System.setProperty(WEBDRIVER_GECKO_DRIVER, GECKODRIVER_EXE_PATH);
         return new FirefoxDriver();
     }
 
-    @Contract(" -> !null")
     private static WebDriver createChromeDriver() {
         System.setProperty(WEBDRIVER_CHROME_DRIVER, CHROMEDRIVER_EXE_PATH);
         return new ChromeDriver();

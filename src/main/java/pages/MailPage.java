@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -32,12 +33,15 @@ public class MailPage extends PageObject {
     @FindBy(xpath = "//a[contains(text(), 'Отправленные')]") //Send
     private WebElement sentMessageButton;
 
+    @FindBy(xpath = "//div[@class='y6']//b[1]")
+    private WebElement rowSubject;
+
 
     //logout
     @FindBy(css = ".gb_8a.gbii")
     private WebElement logOutFlag;
 
-    @FindBy(css = "a[id='gb_71']")
+    @FindBy(xpath = "//a[@class='gb_Fa gb_Ne gb_Ue gb_wb']")
     private WebElement logOutButton;
 
     @FindBy(css = "a[id='account-chooser-link']")
@@ -65,9 +69,8 @@ public class MailPage extends PageObject {
     @FindBy(xpath = "//div[@class='aos T-I-J3 J-J5-Ji']")//Settings
     private WebElement settingsButton;
 
-    @FindBy(xpath = "//div[@class='J-N-Jz' and text()='Настройки']")//Settings
+    @FindBy(xpath = "//div[@class='J-N-Jz' and text()='Настройки']")//Settings //TODO
     private WebElement settingsText;
-
 
     // mark message and check color
     @FindBy(xpath = "//td[@class='apU xY']") //Star
@@ -76,10 +79,17 @@ public class MailPage extends PageObject {
     @FindBy(xpath = "//span[@class='aXw T-KT']") //Star
     private WebElement commaStarFlag;
 
-    //span[@class='aXw T-KT']
-
-    @FindBy(xpath = "//a[contains(text(), 'Помеченные')]")
+    @FindBy(xpath = "//span[@class='nU ']")
     private WebElement markLettersButton;
+
+    @FindBy(xpath = "//span[@email='forwarding-noreply@google.com'][1]")
+    private WebElement letterFromGmailTeam;
+
+    @FindBy(xpath = "//div//a[4]")
+    private WebElement linkFromGmailTeam;
+
+    @FindBy(xpath = "//input[@type='submit']")
+    private WebElement submitButton;
 
 
     public void composeButtonClick() {
@@ -104,22 +114,36 @@ public class MailPage extends PageObject {
 
     public void generalAccountButtonClick() {
         logOutFlag.click();
-        wait.waitForElementIsClickable(logOutButton);
     }
 
     public void logOut() {
         logOutButton.click();
+        String nameOfMainWindow = driver.getWindowHandle();
+        for (String names : driver.getWindowHandles()) {
+            if (!names.equals(nameOfMainWindow)) {
+                driver.switchTo().window(names);
+                driver.close();
+            }
+        }
+        driver.switchTo().window(nameOfMainWindow);
     }
 
     public void findLetter() {
 
     }
 
-    public void markAsSpam() {
+    public void spamFlagBox() {
         flagBox.click();
+    }
+
+    public void spamButton() {
         spamButton.click();
+    }
+
+    public void spamButtonClick() {
         chooseButton.click();
     }
+
 
     public void goToSpam() {
         moreActionButton.click();
@@ -127,18 +151,21 @@ public class MailPage extends PageObject {
     }
 
     public void chooseForwarding() throws InterruptedException {
-        Thread.sleep(1000);
+        //  Thread.sleep(1000);
         settingsButton.click();
         settingsText.click();
-        Thread.sleep(1000);
+        // Thread.sleep(1000);
     }
 
     public void sentMessageButtonClick() {
         sentMessageButton.click();
     }
 
-    public void clickStarFlag() {
+    public void changeStarColor() {
         commaStarFlag.click();
+    }
+
+    public void clickStarFolder() {
         markLettersButton.click();
     }
 
@@ -150,4 +177,23 @@ public class MailPage extends PageObject {
         return yellowStarFlag.getCssValue("color");
     }
 
+    public boolean getStarredFolderStatus() {
+        return markLettersButton.isDisplayed();
+    }
+
+    public void letterFromGmailClick() {
+        letterFromGmailTeam.click();
+    }
+
+    public void linkFromGmailTeamCklick() {
+        linkFromGmailTeam.click();
+        String nameOfMainWindow = driver.getWindowHandle();
+        for (String names : driver.getWindowHandles()) {
+            if (!names.equals(nameOfMainWindow)) {
+                driver.switchTo().window(names);
+                submitButton.click();
+            }
+            driver.switchTo().window(nameOfMainWindow);
+        }
+    }
 }

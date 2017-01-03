@@ -29,13 +29,13 @@ public class SignaturePage extends PageObject {
         signatureTextArea.click();
         signatureTextArea.clear();
         signatureTextArea.sendKeys(signature);
-        actions.click(tempbutton).build().perform();
-        actions.click(saveChangesButton).build().perform();
+        actions.click(tempbutton).build().perform(); //TODO
+        actions.click(saveChangesButton).build().perform(); //TODO
     }
 
     public boolean checkigsaveChangesButton() {
         saveChangesButton.isEnabled();
-        return false;
+        return false; //TODO
     }
 }
 

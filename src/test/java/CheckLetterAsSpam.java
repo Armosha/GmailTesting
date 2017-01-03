@@ -1,8 +1,9 @@
-import EntitySource.User;
 import base.TestBase;
+import entitySource.User;
+import entitySource.UserManager;
 import helpers.MyListener;
 import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import steps.LoginSteps;
@@ -14,28 +15,28 @@ import steps.MailPageSteps;
 @Listeners(MyListener.class)
 public class CheckLetterAsSpam extends TestBase {
 
-    private LoginSteps loginSteps;
-    private MailPageSteps mailPageSteps;
+    UserManager tempUser = new UserManager();//TODO
+    User firstUser;//TODO
+    User secondUser;//TODO
 
-    @BeforeMethod
+
+    @BeforeTest
     public void setUpPages() {
-
-        loginSteps = new LoginSteps(driver);
-        mailPageSteps = new MailPageSteps(driver);
+        firstUser = tempUser.getUser("firstUser");
+        secondUser = tempUser.getUser("secondUser");
     }
 
     @Test(description = "Check letter from user1 in Spam")
+    public void checkMessageInSpam() throws InterruptedException {
 
-        public void checkMessageInSpam(User user) throws InterruptedException {
         loginSteps.authorizationLikeUser(firstUser);
         String subject = mailPageSteps.sendMessageToUser(secondUser);
         mailPageSteps.logOutFromEmailBox();
+        logger.info("Authorization into Gmailbox like second User");
         loginSteps.authorizationLikeUser(secondUser);
-
-
-        mailPageSteps.markLetterAsSpam(subject)
+        mailPageSteps.markLetterAsSpam()
                 .moveToSpamPage();
-        Assert.assertTrue(spamSteps.checkLetterInSpam(subject));
+        Assert.assertTrue(spamSteps.checkLetterInSpam(subject).contentEquals(subject));
     }
 
 }

@@ -1,6 +1,5 @@
 package steps;
 
-import helpers.ConstantContainer;
 import org.openqa.selenium.WebDriver;
 import pages.SentPage;
 
@@ -19,13 +18,11 @@ public class SentSteps extends AbstactStep {
     public SentSteps openMessagefromUser1() {
         logger.info("оpen message from User1");
         sentPage.clickMessagefromUser1();
-        return this;
+        return this;//TODO
     }
 
-    public boolean checkSignature() {
-        logger.info("check Signature");
-        ConstantContainer.SIGNATURE1_TEXT.equalsIgnoreCase(sentPage.getSignature());
-        return true;
+    public void checkSignature() {
+
     }
 
 }

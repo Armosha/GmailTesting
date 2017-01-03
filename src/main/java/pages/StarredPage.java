@@ -16,8 +16,19 @@ public class StarredPage extends PageObject{
     @FindBy(xpath = "//span[@class = 'zF']")
     private WebElement userName;
 
+    @FindBy(xpath = "//div[@class='y6']//b")
+    private WebElement letterSubject;
+
+
+
+
     public String takeUserName() {
-        String name = userName.getText().toString();
+        String name = userName.getText().toString();//TODO
         return name;
+    }
+
+    public boolean takeSubjectFromStarredPage() {
+        letterSubject.isDisplayed();
+        return true;//TODO
     }
 }

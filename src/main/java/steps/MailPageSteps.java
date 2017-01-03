@@ -1,9 +1,8 @@
 package steps;
 
-import helpers.PropertyProvider;
-import EntitySource.User;
-import helpers.ConstantContainer;
+import entitySource.User;
 import helpers.RandomString;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import pages.MailPage;
 
@@ -13,10 +12,6 @@ import pages.MailPage;
  */
 public class MailPageSteps extends AbstactStep {
 
-    private static String SUBJECT_TEXT = "from user1";
-    private static String MESSAGE_TEXT = "Hello, java!";
-    private static final String LOGIN_USER2 = PropertyProvider.getProperty("login_user2");
-    private static final String LOGIN_USER3 = PropertyProvider.getProperty("login_user3");
     private MailPage mailPage;
 
     public MailPageSteps(WebDriver driver) {
@@ -31,7 +26,7 @@ public class MailPageSteps extends AbstactStep {
         mailPage.composeButtonClick();
         mailPage.typeLogin(user.getLogin());
         mailPage.typeSubject(subject);
-        mailPage.typeMessage(ConstantContainer.MESSAGE_TEXT);
+        mailPage.typeMessage("New message");
         mailPage.sendMessageButtonClick();
         return subject;
     }
@@ -44,9 +39,10 @@ public class MailPageSteps extends AbstactStep {
     }
 
 
-
     public MailPageSteps markLetterAsSpam() {
-        mailPage.markAsSpam();
+        mailPage.spamFlagBox();
+        mailPage.spamButton();
+        mailPage.spamButtonClick();
         return this;
     }
 
@@ -62,20 +58,34 @@ public class MailPageSteps extends AbstactStep {
 
     public StarredPageSteps goToStarredPage() {
         logger.info("move to starred page");
-        mailPage.clickStarFlag();
+        mailPage.changeStarColor();
+        mailPage.clickStarFolder();
         return new StarredPageSteps(driver);
     }
 
     public boolean chekStarColor() {
         logger.info("get star color");
         mailPage.getStarColor().contains("#222");
-        return true;
+        return true;//TODO
     }
 
     public boolean chekStatus() {
-        logger.info("check status");
+        logger.info("check status mark letter");
         mailPage.getStatus().contains("Помеченные");
-        return true;
+        return true;//TODO
     }
+
+    public boolean checkStarredFolder() {
+        logger.info("check that Starred Folder is displayd");
+        return mailPage.getStarredFolderStatus();
+    }
+
+    public void getPermission(){
+        mailPage.letterFromGmailClick();
+        mailPage.linkFromGmailTeamCklick();
+
+    }
+
+
 
 }

@@ -46,7 +46,7 @@ public class SettingPage extends PageObject {
         try {
             driver.switchTo().window("Подтвердите адрес пересылки - Google Chrome");
         } catch (NoSuchWindowException e) {
-            System.out.println(e);
+            System.out.println(e.getMessage()); //TODO
         }
         helpButton.click();
         driver.switchTo().window(forward);
