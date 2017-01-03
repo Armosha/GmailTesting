@@ -6,6 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 /**
  * Created by Iryna_Filipava1 on 15.12.2016.
@@ -16,9 +17,9 @@ import org.testng.annotations.Test;
 @Test(description = "Check color of flag, check letter status")
 public class CheckMarkMessage extends TestBase {
 
-    UserManager tempUser = new UserManager();
-    User firstUser = tempUser.getUser("firstUser");
-    User secondUser = tempUser.getUser("secondUser");
+    private UserManager tempUser = new UserManager();
+    private User firstUser = tempUser.getUser("firstUser");
+    private User secondUser = tempUser.getUser("secondUser");
 
     @BeforeTest
     public void setUpPages() {
@@ -32,10 +33,12 @@ public class CheckMarkMessage extends TestBase {
         mailPageSteps.logOutFromEmailBox();
         loginSteps.authorizationLikeUser(secondUser);
         mailPageSteps.goToStarredPage();
-        Assert.assertTrue(starredSteps.checkLetterInStarred());//TODO
-        Assert.assertTrue(mailPageSteps.chekStatus());
-        Assert.assertTrue(mailPageSteps.chekStarColor());
-        Assert.assertTrue(mailPageSteps.checkStarredFolder());
+        SoftAssert as = new SoftAssert();
+        as.assertTrue(starredSteps.checkLetterInStarred());//TODO
+        as.assertTrue(mailPageSteps.chekStatus());
+        as.assertTrue(mailPageSteps.chekStarColor());
+        as.assertTrue(mailPageSteps.checkStarredFolder());
+        as.assertAll();
 
     }
 }

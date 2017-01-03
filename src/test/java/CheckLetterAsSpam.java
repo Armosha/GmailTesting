@@ -13,9 +13,9 @@ import org.testng.annotations.Test;
 @Listeners(MyListener.class)
 public class CheckLetterAsSpam extends TestBase {
 
-    UserManager tempUser = new UserManager();//TODO
-    User firstUser;//TODO
-    User secondUser;//TODO
+    private UserManager tempUser = new UserManager();
+    private User firstUser;
+    private User secondUser;
 
 
     @BeforeTest

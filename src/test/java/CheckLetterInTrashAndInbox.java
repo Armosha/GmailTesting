@@ -9,10 +9,10 @@ import org.testng.annotations.Test;
  */
 public class CheckLetterInTrashAndInbox extends TestBase { //TODO
 
-    UserManager tempUser = new UserManager();
-    User firstUser;//TODO
-    User thirdUser;
-    User secondUser;
+    private UserManager tempUser = new UserManager();
+    private User firstUser;//TODO
+    private User thirdUser;
+    private User secondUser;
 
 
     @BeforeTest
@@ -20,7 +20,6 @@ public class CheckLetterInTrashAndInbox extends TestBase { //TODO
         secondUser = tempUser.getUser("secondUser");
         thirdUser = tempUser.getUser("thirdUser");
         firstUser = tempUser.getUser("firstUser");
-
     }
 
     @Test(description = "Check letter with and without attach in Trash and Inbox")

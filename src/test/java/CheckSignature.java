@@ -1,4 +1,6 @@
 import base.TestBase;
+import entitySource.User;
+import entitySource.UserManager;
 import helpers.MyListener;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
@@ -12,6 +14,10 @@ import org.testng.annotations.Test;
 
 @Test(description = "Check signature")
 public class CheckSignature extends TestBase {
+
+    private UserManager tempUser = new UserManager();
+    private User firstUser = tempUser.getUser("firstUser");
+    private User secondUser = tempUser.getUser("secondUser");
 
     public void checkSignature() throws InterruptedException {
         Assert.assertTrue(signaturesteps.checkSettingTitle());
