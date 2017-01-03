@@ -1,9 +1,8 @@
 package steps;
 
 import helpers.FactoryDriver;
-import org.openqa.selenium.WebDriver;
 import org.apache.log4j.Logger;
-
+import org.openqa.selenium.WebDriver;
 
 /**
  * Created by Iryna_Filipava1 on 12/2/2016.

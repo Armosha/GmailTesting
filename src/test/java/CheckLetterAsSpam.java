@@ -30,7 +30,7 @@ public class CheckLetterAsSpam extends TestBase {
         loginSteps.authorizationLikeUser(firstUser);
         String subject = mailPageSteps.sendMessageToUser(secondUser);
         mailPageSteps.logOutFromEmailBox();
-        logger.info("Authorization into Gmailbox like second User");
+        logger.info(("Authorization into Gmailbox like second User"));
         loginSteps.authorizationLikeUser(secondUser);
         mailPageSteps.markLetterAsSpam()
                 .moveToSpamPage();

@@ -27,7 +27,7 @@ public class CheckLetterInTrashAndInbox extends TestBase { //TODO
     public void checkMessageInTrash() throws InterruptedException {
         loginSteps.authorizationLikeUser(secondUser)
                 .makeForwarding()
-                .forwardingToUserThird(thirdUser);//TODO
+                .forwardingToUserThird(thirdUser);
         mailPageSteps.makeForwarding();
         forwardPageSteps.forwardingToUserThird(thirdUser)
                 .logOutFromForwardPage();
