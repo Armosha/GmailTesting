@@ -10,8 +10,7 @@ import org.openqa.selenium.WebDriver;
 public abstract class AbstactStep {
 
     protected WebDriver driver;
-
-    Logger logger = Logger.getLogger("gmailLogger");//TODO
+    Logger logger = Logger.getRootLogger();
 
     public AbstactStep(WebDriver driver) {
         this.driver = FactoryDriver.getInstance();

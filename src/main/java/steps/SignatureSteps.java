@@ -33,8 +33,7 @@ public class SignatureSteps extends AbstactStep {
     }
 
     public boolean checkSaveSetingButton() {
-        signaturePage.checkigsaveChangesButton();
-        return true;//TODO
-    }
+        return signaturePage.checkigsaveChangesButton();
+    }////
 
 }

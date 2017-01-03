@@ -1,7 +1,4 @@
-2017-01-03 17:11:55 INFO  gmailLogger:29 - Chrome driver created
-2017-01-03 17:12:01 INFO  gmailLogger:20 - Authorization into Gmailbox
-2017-01-03 17:12:02 INFO  gmailLogger:24 - write and send message to secondUser
-2017-01-03 17:12:15 INFO  gmailLogger:35 - log out email box
-2017-01-03 17:12:15 INFO  gmailLogger:33 - Authorization into Gmailbox like second User
-2017-01-03 17:12:15 INFO  gmailLogger:20 - Authorization into Gmailbox
-2017-01-03 17:12:28 INFO  gmailLogger:28 - **** Test  checkMessageInSpam CheckLetterAsSpam.checkMessageInSpam()[pri:0, instance:CheckLetterAsSpam@37374a5e] has failed ****
+2017-01-03 17:33:06 INFO  gmailLogger:29 - Chrome driver created
+2017-01-03 17:33:25 INFO  gmailLogger:33 - Authorization into Gmailbox like second User
+2017-01-03 17:33:34 INFO  gmailLogger:28 - **** Test  checkMessageInSpam CheckLetterAsSpam.checkMessageInSpam()[pri:0, instance:CheckLetterAsSpam@37374a5e] has failed ****
+2017-01-03 17:33:34 INFO  gmailLogger:28 - **** Test  checkMessageInSpam CheckLetterAsSpam.checkMessageInSpam()[pri:0, instance:CheckLetterAsSpam@37374a5e] has failed ****

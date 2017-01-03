@@ -65,27 +65,22 @@ public class MailPageSteps extends AbstactStep {
 
     public boolean chekStarColor() {
         logger.info("get star color");
-        mailPage.getStarColor().contains("#222");
-        return true;//TODO
-    }
+        return mailPage.getStarColor().contains("#222");
+    }/////
 
     public boolean chekStatus() {
         logger.info("check status mark letter");
-        mailPage.getStatus().contains("Помеченные");
-        return true;//TODO
-    }
+        return mailPage.getStatus().contains("Помеченные");
+    }////
 
     public boolean checkStarredFolder() {
-        logger.info("check that Starred Folder is displayd");
+        logger.info("check that Starred Folder is displayed");
         return mailPage.getStarredFolderStatus();
-    }
+    }///
 
-    public void getPermission(){
+    public void getPermission() {
         mailPage.letterFromGmailClick();
         mailPage.linkFromGmailTeamCklick();
 
     }
-
-
-
 }

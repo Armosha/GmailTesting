@@ -20,6 +20,7 @@ public class CheckMarkMessage extends TestBase {
     private UserManager tempUser = new UserManager();
     private User firstUser = tempUser.getUser("firstUser");
     private User secondUser = tempUser.getUser("secondUser");
+    private SoftAssert as = new SoftAssert();
 
     @BeforeTest
     public void setUpPages() {
@@ -33,7 +34,6 @@ public class CheckMarkMessage extends TestBase {
         mailPageSteps.logOutFromEmailBox();
         loginSteps.authorizationLikeUser(secondUser);
         mailPageSteps.goToStarredPage();
-        SoftAssert as = new SoftAssert();
         as.assertTrue(starredSteps.checkLetterInStarred());//TODO
         as.assertTrue(mailPageSteps.chekStatus());
         as.assertTrue(mailPageSteps.chekStarColor());

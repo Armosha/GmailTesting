@@ -28,6 +28,8 @@ public class TestBase {
     @BeforeMethod
     public void setUp() throws Exception {
         this.driver = FactoryDriver.getInstance();
+        this.logger = Logger.getRootLogger();
+
         this.loginSteps = new LoginSteps(driver);
         this.mailPageSteps = new MailPageSteps(driver);
         this.spamSteps = new SpamSteps(driver);
@@ -36,7 +38,6 @@ public class TestBase {
         this.sentPages = new SentSteps(driver);
         this.starredSteps = new StarredPageSteps(driver);
         this.forwardPageSteps = new ForwardPageSteps(driver);
-        this.logger = Logger.getLogger("gmailLogger");
         tempUser = new UserManager();
     }
 
