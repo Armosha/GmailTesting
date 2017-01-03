@@ -1,0 +1,8 @@
+
+target/*
+
+# IDEA
+.idea/*
+Gmailtesting.iml
+/target/
+/bin/
