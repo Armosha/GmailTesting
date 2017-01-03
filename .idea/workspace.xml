@@ -1,73 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="131300a9-6543-47cf-bc94-3ab5486feccb" name="Default" comment="have changed some classes: factiry, mail, forward">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Parser/UserJaxBParser.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/entitySource/UserManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/entitySource/UsersList.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/EntitySource/Users.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/Parser/XmlJaxbHandler.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/Parser/XmlJaxbParser.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/helpers/ConstantContainer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/log4j2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pages/SpamObject.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/CheckSignature.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/EntitySource/User.java" afterPath="$PROJECT_DIR$/src/main/java/entitySource/User.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/pages/SpamObject.java" afterPath="$PROJECT_DIR$/src/main/java/pages/SpamPage.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/checkLetterInTrashAndInbox.java" afterPath="$PROJECT_DIR$/src/test/java/CheckLetterInTrashAndInbox.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/base/TestBase.class" afterPath="$PROJECT_DIR$/target/classes/base/TestBase.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/helpers/ConstantContainer.class" afterPath="$PROJECT_DIR$/target/classes/helpers/ConstantContainer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/helpers/FactoryDriver$1.class" afterPath="$PROJECT_DIR$/target/classes/helpers/FactoryDriver$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/helpers/FactoryDriver.class" afterPath="$PROJECT_DIR$/target/classes/helpers/FactoryDriver.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/helpers/PropertyProvider.class" afterPath="$PROJECT_DIR$/target/classes/helpers/PropertyProvider.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/helpers/RandomString.class" afterPath="$PROJECT_DIR$/target/classes/helpers/RandomString.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pages/ForwardPage.class" afterPath="$PROJECT_DIR$/target/classes/pages/ForwardPage.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pages/LoginPage.class" afterPath="$PROJECT_DIR$/target/classes/pages/LoginPage.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pages/MailPage.class" afterPath="$PROJECT_DIR$/target/classes/pages/MailPage.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pages/PageObject.class" afterPath="$PROJECT_DIR$/target/classes/pages/PageObject.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pages/SentPage.class" afterPath="$PROJECT_DIR$/target/classes/pages/SentPage.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pages/SettingPage.class" afterPath="$PROJECT_DIR$/target/classes/pages/SettingPage.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pages/StarredPage.class" afterPath="$PROJECT_DIR$/target/classes/pages/StarredPage.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/steps/AbstactStep.class" afterPath="$PROJECT_DIR$/target/classes/steps/AbstactStep.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/steps/ForwardPageSteps.class" afterPath="$PROJECT_DIR$/target/classes/steps/ForwardPageSteps.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/steps/LoginSteps.class" afterPath="$PROJECT_DIR$/target/classes/steps/LoginSteps.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/steps/MailPageSteps.class" afterPath="$PROJECT_DIR$/target/classes/steps/MailPageSteps.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/steps/SentSteps.class" afterPath="$PROJECT_DIR$/target/classes/steps/SentSteps.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/steps/SettingPageSteps.class" afterPath="$PROJECT_DIR$/target/classes/steps/SettingPageSteps.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/steps/SignatureSteps.class" afterPath="$PROJECT_DIR$/target/classes/steps/SignatureSteps.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/steps/SpamSteps.class" afterPath="$PROJECT_DIR$/target/classes/steps/SpamSteps.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/steps/StarredPageSteps.class" afterPath="$PROJECT_DIR$/target/classes/steps/StarredPageSteps.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/CheckLetterAsSpam.class" afterPath="$PROJECT_DIR$/target/test-classes/CheckLetterAsSpam.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/CheckMarkMessage.class" afterPath="$PROJECT_DIR$/target/test-classes/CheckMarkMessage.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/checkLetterInTrashAndInbox.class" afterPath="$PROJECT_DIR$/target/test-classes/checkLetterInTrashAndInbox.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/base/TestBase.java" afterPath="$PROJECT_DIR$/src/main/java/base/TestBase.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/helpers/FactoryDriver.java" afterPath="$PROJECT_DIR$/src/main/java/helpers/FactoryDriver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/helpers/MyListener.java" afterPath="$PROJECT_DIR$/src/main/java/helpers/MyListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/helpers/PropertyProvider.java" afterPath="$PROJECT_DIR$/src/main/java/helpers/PropertyProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pages/ForwardPage.java" afterPath="$PROJECT_DIR$/src/main/java/pages/ForwardPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pages/MailPage.java" afterPath="$PROJECT_DIR$/src/main/java/pages/MailPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pages/SettingPage.java" afterPath="$PROJECT_DIR$/src/main/java/pages/SettingPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pages/SignaturePage.java" afterPath="$PROJECT_DIR$/src/main/java/pages/SignaturePage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pages/StarredPage.java" afterPath="$PROJECT_DIR$/src/main/java/pages/StarredPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/steps/AbstactStep.java" afterPath="$PROJECT_DIR$/src/main/java/steps/AbstactStep.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/steps/ForwardPageSteps.java" afterPath="$PROJECT_DIR$/src/main/java/steps/ForwardPageSteps.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/steps/LoginSteps.java" afterPath="$PROJECT_DIR$/src/main/java/steps/LoginSteps.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/steps/MailPageSteps.java" afterPath="$PROJECT_DIR$/src/main/java/steps/MailPageSteps.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/steps/SentSteps.java" afterPath="$PROJECT_DIR$/src/main/java/steps/SentSteps.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/steps/SettingPageSteps.java" afterPath="$PROJECT_DIR$/src/main/java/steps/SettingPageSteps.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/steps/SignatureSteps.java" afterPath="$PROJECT_DIR$/src/main/java/steps/SignatureSteps.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/steps/SpamSteps.java" afterPath="$PROJECT_DIR$/src/main/java/steps/SpamSteps.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/steps/StarredPageSteps.java" afterPath="$PROJECT_DIR$/src/main/java/steps/StarredPageSteps.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/usersbase.xml" afterPath="$PROJECT_DIR$/src/main/resources/usersbase.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/CheckLetterAsSpam.java" afterPath="$PROJECT_DIR$/src/test/java/CheckLetterAsSpam.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/CheckMarkMessage.java" afterPath="$PROJECT_DIR$/src/test/java/CheckMarkMessage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/config.properties" afterPath="$PROJECT_DIR$/target/classes/config.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/log4j.properties" afterPath="$PROJECT_DIR$/target/classes/log4j.properties" />
-    </list>
+    <list default="true" id="131300a9-6543-47cf-bc94-3ab5486feccb" name="Default" comment="have changed some classes: factiry, mail, forward" />
     <list id="ec4b514c-9d51-4d9b-9edf-237ed523a63e" name="Rejected commit: Default" comment="have changed some classes: factiry, mail, forward" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -309,6 +243,46 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="target" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GmailTesting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GmailTesting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="target" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="classes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GmailTesting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GmailTesting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="target" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="classes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="helpers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -960,7 +934,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -977,7 +951,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26132685" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26132685" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1056,6 +1030,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="30" lean-forward="false" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>
