@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 /**
- * Created by Iryna_Filipava1 on 12/2/2016.
+ * Created by Iryna_Filipava1 on 12/19/2016.
  */
 public class SettingPage extends PageObject {
 
@@ -39,18 +39,13 @@ public class SettingPage extends PageObject {
         setForwardbutton.click();
         wait.waitForElementIsClickable(forwardingAddressArea);
         forwardingAddressArea.sendKeys(login);
-
-
         String forward = driver.getWindowHandle();
         nextStepButton.click();
-        try {
-            driver.switchTo().window("Подтвердите адрес пересылки - Google Chrome");
-        } catch (NoSuchWindowException e) {
-            System.out.println(e);
-        }
+        driver.switchTo().window("Подтвердите адрес пересылки - Google Chrome");
         helpButton.click();
         driver.switchTo().window(forward);
         okButton.click();
     }
+
 
 }

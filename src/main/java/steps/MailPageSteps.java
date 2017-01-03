@@ -1,6 +1,8 @@
 package steps;
 
-import helpers.ConstantContainer;
+import entitySource.User;
+import helpers.RandomString;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import pages.MailPage;
 
@@ -17,40 +19,73 @@ public class MailPageSteps extends AbstactStep {
         mailPage = new MailPage(driver);
     }
 
-    public MailPageSteps sendMessageToUser2() {
-        logger.info("write and send message to user2");
-        mailPage.writeMessageToUser2(ConstantContainer.LOGIN_USER2, ConstantContainer.SUBJECT_TEXT, ConstantContainer.MESSAGE_TEXT);
-        return this;
+
+    public String sendMessageToUser(User user) {
+        logger.info("write and send message to secondUser");
+        String subject = "Subject" + RandomString.getRandomStringEng(4);
+        mailPage.composeButtonClick();
+        mailPage.typeLogin(user.getLogin());
+        mailPage.typeSubject(subject);
+        mailPage.typeMessage("New message");
+        mailPage.sendMessageButtonClick();
+        return subject;
     }
 
-    public LoginSteps logOutFromEmailBox() throws InterruptedException {
+    public LoginSteps logOutFromEmailBox() {
         logger.info("log out email box");
+        mailPage.generalAccountButtonClick();
         mailPage.logOut();
         return new LoginSteps(driver);
     }
 
+
     public MailPageSteps markLetterAsSpam() {
-        logger.info("mark letter as spam");
-        mailPage.markAsSpam();
+        mailPage.spamFlagBox();
+        mailPage.spamButton();
+        mailPage.spamButtonClick();
         return this;
     }
 
     public SpamSteps moveToSpamPage() {
-        logger.info("move to spam page");
         mailPage.goToSpam();
         return new SpamSteps(driver);
     }
 
-    public SettingPageSteps getSettingPage() throws InterruptedException {
-        logger.info("move to setting page");
-        mailPage.getSetting();
-        return new SettingPageSteps(driver);
+    public ForwardPageSteps makeForwarding() throws InterruptedException {
+        mailPage.chooseForwarding();
+        return new ForwardPageSteps(driver);
     }
 
-    public MailPageSteps goToSentPage() {
-        logger.info("move to sent page");
-        mailPage.sentMessageButtonClick();
-        return this;
+    public StarredPageSteps goToStarredPage() {
+        logger.info("move to starred page");
+        mailPage.changeStarColor();
+        mailPage.clickStarFolder();
+        return new StarredPageSteps(driver);
     }
+
+    public boolean chekStarColor() {
+        logger.info("get star color");
+        mailPage.getStarColor().contains("#222");
+        return true;//TODO
+    }
+
+    public boolean chekStatus() {
+        logger.info("check status mark letter");
+        mailPage.getStatus().contains("Помеченные");
+        return true;//TODO
+    }
+
+    public boolean checkStarredFolder() {
+        logger.info("check that Starred Folder is displayd");
+        return mailPage.getStarredFolderStatus();
+    }
+
+    public void getPermission(){
+        mailPage.letterFromGmailClick();
+        mailPage.linkFromGmailTeamCklick();
+
+    }
+
+
 
 }

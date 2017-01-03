@@ -5,14 +5,13 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-
 /**
  * Created by Iryna_Filipava1 on 12/2/2016.
  */
-
 public class ExplicitWait {
     private WebDriver driverWait;
     private Wait<WebDriver> wait;
+    private WebElement element;
 
     public ExplicitWait(WebDriver driver) {
         this.driverWait = driver;
@@ -30,15 +29,9 @@ public class ExplicitWait {
         wait.until(ExpectedConditions.invisibilityOfElementLocated(by));
     }
 
-
-   // public void untilLoadMailPage() {
-       // wait.until(ExpectedConditions.titleContains(PropertyProvider.getProperty("mailboxtitlewait")));
-   // }
-
-   public void waitForElementIsClickable(WebElement element) {
+    public void waitForElementIsClickable(WebElement element) {
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
-
 
 }
 

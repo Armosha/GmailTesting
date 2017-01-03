@@ -1,9 +1,9 @@
 
 target/*
 
-
 # IDEA
 .idea/*
 /target/
 /bin/
 Gmailtesting.iml
+

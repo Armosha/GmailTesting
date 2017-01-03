@@ -29,11 +29,24 @@ public class LoginPage extends PageObject {
     @FindBy(css = "#PersistentCookie")
     private WebElement stayInCheck;
 
-    public void loginIntoGmailPostBox(String login, String password) throws InterruptedException {
+
+    public void findLoginField() {
         loginField.clear();
+    }
+
+    public void typeLoginIntoLoginField(String login) {
         loginField.sendKeys(login);
+    }
+
+    public void moveToNextPageButton() {
         nextButton.click();
+    }
+
+    public void typePasswordIntoPasswordField(String password) {
         passwordField.sendKeys(password);
+    }
+
+    public void clickStayInSystemBox() {
         if (stayInCheck.isSelected()) {
             stayInCheck.click();
         }

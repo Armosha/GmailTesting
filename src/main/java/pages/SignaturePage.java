@@ -5,7 +5,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 /**
+<<<<<<< HEAD
  * Created by Iryna_Filipava1 on 12/2/2016.
+=======
+ * Created by Iryna_Filipava1 on 12/19/2016.
+>>>>>>> tempbranch1
  */
 public class SignaturePage extends PageObject {
 
@@ -29,8 +33,8 @@ public class SignaturePage extends PageObject {
         signatureTextArea.click();
         signatureTextArea.clear();
         signatureTextArea.sendKeys(signature);
-        actions.click(tempbutton).build().perform();
-        actions.click(saveChangesButton).build().perform();
+        actions.click(tempbutton).build().perform(); //TODO
+        actions.click(saveChangesButton).build().perform(); //TODO
     }
 
     public boolean checkigsaveChangesButton() {
@@ -38,5 +42,3 @@ public class SignaturePage extends PageObject {
         return false;
     }
 }
-
-

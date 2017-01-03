@@ -17,8 +17,8 @@ public class CheckSignature extends TestBase {
         Assert.assertTrue(signaturesteps.checkSettingTitle());
         signaturesteps.setSignature();
         Assert.assertTrue(signaturesteps.checkSaveSetingButton());
-        mailPageSteps.sendMessageToUser2();
-        mailPageSteps.goToSentPage();
+       // mailPageSteps.sendMessageToUser2();
+       // mailPageSteps.goToSentPage();
         sentPages.openMessagefromUser1();
         Assert.assertTrue(sentPages.checkSignature());
     }

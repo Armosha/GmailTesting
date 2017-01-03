@@ -1,25 +1,22 @@
 package steps;
 
-import helpers.ConstantContainer;
-import helpers.PropertyProvider;
+import pages.SpamPage;
 import org.openqa.selenium.WebDriver;
-import pages.SpamObject;
 
 /**
  * Created by Iryna_Filipava1 on 12/2/2016.
  */
 public class SpamSteps extends AbstactStep {
 
-    private SpamObject spamObject;
+    private SpamPage spamPage;
 
     public SpamSteps(WebDriver driver) {
         super(driver);
-        spamObject = new SpamObject(driver);
+        spamPage = new SpamPage(driver);
     }
 
-    public boolean checkLetterInSpam() {
-        logger.info("check letter into spam folder");
-        ConstantContainer.SPAMPAGE_EXPECTED_RESULT.equalsIgnoreCase(spamObject.takeUserName());
-        return true;
+    public String checkLetterInSpam(String subject) {
+        spamPage.takeSubject();
+        return subject;
     }
 }

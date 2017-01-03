@@ -4,7 +4,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-
+/**
+ * Created by Iryna_Filipava1 on 12/19/2016.
+ */
 public class SentPage extends PageObject {
 
     public SentPage (WebDriver driver){
@@ -33,4 +35,3 @@ public class SentPage extends PageObject {
     }
 
 }
-

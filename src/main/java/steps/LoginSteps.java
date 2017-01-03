@@ -1,7 +1,6 @@
 package steps;
 
-import helpers.ConstantContainer;
-import helpers.PropertyProvider;
+import entitySource.User;
 import org.openqa.selenium.WebDriver;
 import pages.LoginPage;
 
@@ -17,21 +16,14 @@ public class LoginSteps extends AbstactStep {
         loginPage = new LoginPage(driver);
     }
 
-    public MailPageSteps authorizationLikeUser1() throws InterruptedException {
-        logger.info("Authorization");
-        loginPage.loginIntoGmailPostBox(ConstantContainer.LOGIN_USER1, ConstantContainer.PASSWORD_USER1);
+    public MailPageSteps authorizationLikeUser(User user) {
+        logger.info("Authorization into Gmailbox");
+        loginPage.findLoginField();
+        loginPage.typeLoginIntoLoginField(user.getLogin());
+        loginPage.moveToNextPageButton();
+        loginPage.typePasswordIntoPasswordField(user.getPassword());
+        loginPage.clickStayInSystemBox();
         return new MailPageSteps(driver);
     }
 
-    public MailPageSteps authorizationLikeUser2() throws InterruptedException {
-        logger.info("Authorization");
-        loginPage.loginIntoGmailPostBox(ConstantContainer.LOGIN_USER2, ConstantContainer.PASSWORD_USER2);
-        return new MailPageSteps(driver);
-    }
-
-    public MailPageSteps authorizationLikeUser3() throws InterruptedException {
-        logger.info("Authorization");
-        loginPage.loginIntoGmailPostBox(ConstantContainer.LOGIN_USER3, ConstantContainer.PASSWORD_USER3);
-        return new MailPageSteps(driver);
-    }
 }

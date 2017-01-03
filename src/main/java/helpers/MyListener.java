@@ -12,11 +12,12 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * Created by Iryna_Filipava1 on 12/9/2016.
+Created by Iryna_Filipava1 on 12/9/2016.
  */
+
 public class MyListener extends TestListenerAdapter {
 
-    String filePath = "C:/Users/Iryna_Filipava1/Work/\\SCREENSHOTS\\";
+    String filePath = "./target/screenshots";
     Logger logger = Logger.getLogger("gmailLogger");
     WebDriver driver;
 
@@ -36,7 +37,6 @@ public class MyListener extends TestListenerAdapter {
             FileUtils.copyFile(scrFile, new File(filePath + methodName + ".png"));
             System.out.println("*** Placed screenshot in " + filePath + " ***");
         } catch (IOException e) {
-            e.printStackTrace();
             logger.info(e);
         }
     }

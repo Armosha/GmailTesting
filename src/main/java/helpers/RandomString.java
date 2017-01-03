@@ -24,9 +24,9 @@ public class RandomString {
         return sb.toString();
     }
 
-    public static String getRandomNumber(int length){
+    public static String getRandomNumber(int length) {
         String result = "";
-        for(int i = 0; i < length; i++) {
+        for (int i = 0; i < length; i++) {
             result += String.valueOf(rnd.nextInt(9) + 1);
         }
         return result;
