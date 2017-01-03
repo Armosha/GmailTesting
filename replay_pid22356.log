@@ -680,7 +680,7 @@ instanceKlass sun/security/ec/SunECEntries
 instanceKlass sun/security/ec/SunEC$1
 instanceKlass sun/security/util/ManifestEntryVerifier$SunProviderHolder
 instanceKlass sun/nio/cs/Surrogate
-instanceKlass sun/nio/cs/Surrogate$Parser
+instanceKlass sun/nio/cs/Surrogate$parser
 instanceKlass java/util/Base64$Encoder
 instanceKlass java/util/Base64$Decoder
 instanceKlass java/util/Base64
@@ -1385,7 +1385,7 @@ instanceKlass com/sun/org/apache/xerces/internal/xni/XMLDTDContentModelHandler
 instanceKlass com/sun/org/apache/xerces/internal/xni/XMLDTDHandler
 instanceKlass com/sun/org/apache/xerces/internal/xni/XMLDocumentHandler
 instanceKlass org/xml/sax/XMLReader
-instanceKlass org/xml/sax/Parser
+instanceKlass org/xml/sax/parser
 instanceKlass com/sun/org/apache/xerces/internal/utils/XMLSecurityPropertyManager
 instanceKlass com/sun/org/apache/xerces/internal/utils/SecuritySupport$8
 instanceKlass com/sun/org/apache/xerces/internal/utils/SecuritySupport$4
@@ -1406,7 +1406,7 @@ instanceKlass org/xml/sax/EntityResolver
 instanceKlass org/testng/xml/XMLParser
 instanceKlass org/testng/xml/ISuiteParser
 instanceKlass org/testng/xml/IFileParser
-instanceKlass org/testng/xml/Parser
+instanceKlass org/testng/xml/parser
 instanceKlass java/lang/Character$CharacterCache
 instanceKlass org/testng/internal/Utils
 instanceKlass sun/reflect/generics/reflectiveObjects/LazyReflectiveObjectGenerator
@@ -1589,7 +1589,7 @@ instanceKlass java/util/ArrayList$Itr
 instanceKlass java/net/Proxy
 instanceKlass sun/net/spi/DefaultProxySelector$3
 instanceKlass sun/net/spi/DefaultProxySelector$NonProxyInfo
-instanceKlass java/net/URI$Parser
+instanceKlass java/net/URI$parser
 instanceKlass java/net/URI
 instanceKlass java/util/Properties$LineReader
 instanceKlass sun/net/NetProperties$1

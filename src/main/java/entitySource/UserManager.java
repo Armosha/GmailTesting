@@ -1,7 +1,7 @@
 package entitySource;
 
 
-import Parser.UserJaxBParser;
+import parser.UserJaxBParser;
 
 import java.util.List;
 
