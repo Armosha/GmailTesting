@@ -1,20 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="131300a9-6543-47cf-bc94-3ab5486feccb" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/base/TestBase.class" afterPath="$PROJECT_DIR$/target/classes/base/TestBase.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/helpers/ExplicitWait.class" afterPath="$PROJECT_DIR$/target/classes/helpers/ExplicitWait.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pages/ForwardPage.class" afterPath="$PROJECT_DIR$/target/classes/pages/ForwardPage.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pages/MailPage.class" afterPath="$PROJECT_DIR$/target/classes/pages/MailPage.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/steps/AbstactStep.class" afterPath="$PROJECT_DIR$/target/classes/steps/AbstactStep.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/steps/ForwardPageSteps.class" afterPath="$PROJECT_DIR$/target/classes/steps/ForwardPageSteps.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/steps/MailPageSteps.class" afterPath="$PROJECT_DIR$/target/classes/steps/MailPageSteps.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/steps/SentSteps.class" afterPath="$PROJECT_DIR$/target/classes/steps/SentSteps.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/steps/SignatureSteps.class" afterPath="$PROJECT_DIR$/target/classes/steps/SignatureSteps.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/steps/StarredPageSteps.class" afterPath="$PROJECT_DIR$/target/classes/steps/StarredPageSteps.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/CheckMarkMessage.class" afterPath="$PROJECT_DIR$/target/test-classes/CheckMarkMessage.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/checkLetterInTrashAndInbox.class" afterPath="$PROJECT_DIR$/target/test-classes/checkLetterInTrashAndInbox.class" />
+    <list default="true" id="131300a9-6543-47cf-bc94-3ab5486feccb" name="Default" comment="changed some classes and add robot class in mailpage">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pages/PageObject.class" afterPath="$PROJECT_DIR$/target/classes/pages/PageObject.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/CheckLetterInTrashAndInbox.java" afterPath="$PROJECT_DIR$/src/test/java/CheckLetterInTrashAndInbox.java" />
     </list>
     <list id="ec4b514c-9d51-4d9b-9edf-237ed523a63e" name="Rejected commit: Default" comment="have changed some classes: factiry, mail, forward" />
     <list id="651bdae8-1556-4ead-806e-833617826f51" name="Rejected commit: Default (2)" comment="changed some classes and add robot class in malepage">
@@ -30,14 +20,12 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/steps/MailPageSteps.java" afterPath="$PROJECT_DIR$/src/main/java/steps/MailPageSteps.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/steps/StarredPageSteps.java" afterPath="$PROJECT_DIR$/src/main/java/steps/StarredPageSteps.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/usersbase.xml" afterPath="$PROJECT_DIR$/src/main/resources/usersbase.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/CheckLetterInTrashAndInbox.java" afterPath="$PROJECT_DIR$/src/test/java/CheckLetterInTrashAndInbox.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/CheckMarkMessage.java" afterPath="$PROJECT_DIR$/src/test/java/CheckMarkMessage.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <file path="$PROJECT_DIR$/src/main/java/pages/MailPage.java" ignored="true" />
-    <file path="$PROJECT_DIR$/src/test/java/CheckLetterInTrashAndInbox.java" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,8 +60,8 @@
       <file leaf-file-name="CheckLetterInTrashAndInbox.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/CheckLetterInTrashAndInbox.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="46" column="45" lean-forward="false" selection-start-line="46" selection-start-column="45" selection-end-line="46" selection-end-column="45" />
+            <state relative-caret-position="408">
+              <caret line="39" column="40" lean-forward="true" selection-start-line="39" selection-start-column="40" selection-end-line="39" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -968,7 +956,14 @@
       <option name="project" value="LOCAL" />
       <updated>1483579541046</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="changed some classes and add robot class in mailpage">
+      <created>1483579665815</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1483579665815</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1014,7 +1009,7 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33525345" sideWeight="0.11812298" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3350717" sideWeight="0.11812298" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33376792" sideWeight="0.881877" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -1451,8 +1446,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/CheckLetterInTrashAndInbox.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="46" column="45" lean-forward="false" selection-start-line="46" selection-start-column="45" selection-end-line="46" selection-end-column="45" />
+        <state relative-caret-position="408">
+          <caret line="39" column="40" lean-forward="true" selection-start-line="39" selection-start-column="40" selection-end-line="39" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
