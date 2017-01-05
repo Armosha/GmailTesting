@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="131300a9-6543-47cf-bc94-3ab5486feccb" name="Default" comment="changed some classes and add robot class in malepage">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pages/SpamObject.class" afterPath="" />
+    <list default="true" id="131300a9-6543-47cf-bc94-3ab5486feccb" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/base/TestBase.class" afterPath="$PROJECT_DIR$/target/classes/base/TestBase.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/helpers/ExplicitWait.class" afterPath="$PROJECT_DIR$/target/classes/helpers/ExplicitWait.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pages/ForwardPage.class" afterPath="$PROJECT_DIR$/target/classes/pages/ForwardPage.class" />
@@ -37,7 +36,8 @@
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <file path="$PROJECT_DIR$/src/main/java/pages/MailPage.java" ignored="false" />
+    <file path="$PROJECT_DIR$/src/main/java/pages/MailPage.java" ignored="true" />
+    <file path="$PROJECT_DIR$/src/test/java/CheckLetterInTrashAndInbox.java" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,17 +53,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MailPage.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MailPage.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/pages/MailPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="127" column="16" lean-forward="false" selection-start-line="127" selection-start-column="16" selection-end-line="127" selection-end-column="16" />
+            <state relative-caret-position="-629">
+              <caret line="70" column="0" lean-forward="true" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3326#3327#0" expanded="true" />
                 <element signature="e#3381#3382#0" expanded="true" />
                 <element signature="e#4684#4685#0" expanded="true" />
                 <element signature="e#4741#4742#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CheckLetterInTrashAndInbox.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/CheckLetterInTrashAndInbox.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="483">
+              <caret line="46" column="45" lean-forward="false" selection-start-line="46" selection-start-column="45" selection-end-line="46" selection-end-column="45" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -104,16 +116,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
               <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SettingPageSteps.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/steps/SettingPageSteps.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="21" column="21" lean-forward="false" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -231,10 +233,10 @@
         <option value="$PROJECT_DIR$/src/main/java/pages/ForwardPage.java" />
         <option value="$PROJECT_DIR$/src/main/java/steps/MailPageSteps.java" />
         <option value="$PROJECT_DIR$/src/test/java/CheckMarkMessage.java" />
-        <option value="$PROJECT_DIR$/src/test/java/CheckLetterInTrashAndInbox.java" />
         <option value="$PROJECT_DIR$/src/main/java/pages/SignaturePage.java" />
         <option value="$PROJECT_DIR$/src/main/java/pages/SentPage.java" />
         <option value="$PROJECT_DIR$/src/main/java/pages/MailPage.java" />
+        <option value="$PROJECT_DIR$/src/test/java/CheckLetterInTrashAndInbox.java" />
       </list>
     </option>
   </component>
@@ -959,6 +961,14 @@
       <option name="presentableId" value="Default" />
       <updated>1480676491427</updated>
     </task>
+    <task id="LOCAL-00001" summary="changed some classes and add robot class in mailpage">
+      <created>1483579541046</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1483579541046</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1033,7 +1043,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="have changed some classes: factiry, mail, forward" />
     <MESSAGE value="changed some classes and add robot class in malepage" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed some classes and add robot class in malepage" />
+    <MESSAGE value="changed some classes and add robot class in mailpage" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed some classes and add robot class in mailpage" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1325,16 +1336,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/CheckLetterInTrashAndInbox.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="41" column="49" lean-forward="false" selection-start-line="41" selection-start-column="49" selection-end-line="41" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/CheckSignature.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -1436,14 +1437,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pages/MailPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="127" column="16" lean-forward="false" selection-start-line="127" selection-start-column="16" selection-end-line="127" selection-end-column="16" />
+        <state relative-caret-position="-629">
+          <caret line="70" column="0" lean-forward="true" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#3326#3327#0" expanded="true" />
             <element signature="e#3381#3382#0" expanded="true" />
             <element signature="e#4684#4685#0" expanded="true" />
             <element signature="e#4741#4742#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/CheckLetterInTrashAndInbox.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="46" column="45" lean-forward="false" selection-start-line="46" selection-start-column="45" selection-end-line="46" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
