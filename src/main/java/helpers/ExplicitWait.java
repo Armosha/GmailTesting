@@ -25,13 +25,11 @@ public class ExplicitWait {
                 .withMessage("Element was not found by locator ");
     }
 
-    public void waitForElementDisapearing(By by) {
-        wait.until(ExpectedConditions.invisibilityOfElementLocated(by));
-    }
-
     public void waitForElementIsClickable(WebElement element) {
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
+
+
 
 }
 

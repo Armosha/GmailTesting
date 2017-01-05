@@ -2,7 +2,6 @@ import base.TestBase;
 import entitySource.User;
 import entitySource.UserManager;
 import helpers.MyListener;
-import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -34,7 +33,7 @@ public class CheckMarkMessage extends TestBase {
         mailPageSteps.logOutFromEmailBox();
         loginSteps.authorizationLikeUser(secondUser);
         mailPageSteps.goToStarredPage();
-        as.assertTrue(starredSteps.checkLetterInStarred());//TODO
+        as.assertTrue(starredSteps.checkLetterInStarred());
         as.assertTrue(mailPageSteps.chekStatus());
         as.assertTrue(mailPageSteps.chekStarColor());
         as.assertTrue(mailPageSteps.checkStarredFolder());

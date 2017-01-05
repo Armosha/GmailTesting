@@ -5,12 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 /**
-<<<<<<< HEAD
- * Created by Iryna_Filipava1 on 12/2/2016.
-=======
- * Created by Iryna_Filipava1 on 12/19/2016.
->>>>>>> tempbranch1
- */
+ Created by Iryna_Filipava1 on 12/2/2016.
+  */
 public class SignaturePage extends PageObject {
 
     public SignaturePage(WebDriver driver) {
@@ -33,8 +29,8 @@ public class SignaturePage extends PageObject {
         signatureTextArea.click();
         signatureTextArea.clear();
         signatureTextArea.sendKeys(signature);
-        actions.click(tempbutton).build().perform(); //TODO
-        actions.click(saveChangesButton).build().perform(); //TODO
+        tempbutton.click();
+        saveChangesButton.click();
     }
 
     public boolean checkigsaveChangesButton() {

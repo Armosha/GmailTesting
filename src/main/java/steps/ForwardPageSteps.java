@@ -26,8 +26,10 @@ public class ForwardPageSteps extends AbstactStep {
         return this;
     }
 
-    public void logOutFromForwardPage() {
+    public void logOutFromForwardPage() throws InterruptedException {
+        //Thread.sleep(3000);
         forwardPage.logOutButtonClick();
+        // Thread.sleep(3000);
         forwardPage.logOutFromForwardPage();
     }
 
@@ -37,7 +39,7 @@ public class ForwardPageSteps extends AbstactStep {
         return this;
     }
 
-    public ForwardPageSteps setPopSettings(User user){
+    public ForwardPageSteps setPopSettings(User user) {
         forwardPage.popRadioButtonClick();
         forwardPage.settingButtonClick();
         forwardPage.fromFilterButton(user.getLogin());

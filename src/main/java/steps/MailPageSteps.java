@@ -2,9 +2,10 @@ package steps;
 
 import entitySource.User;
 import helpers.RandomString;
-import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import pages.MailPage;
+
+import java.awt.*;
 
 
 /**
@@ -20,7 +21,7 @@ public class MailPageSteps extends AbstactStep {
     }
 
 
-    public String sendMessageToUser(User user) {
+    public String sendMessageToUser(User user) throws InterruptedException {
         logger.info("write and send message to secondUser");
         String subject = "Subject" + RandomString.getRandomStringEng(4);
         mailPage.composeButtonClick();
@@ -31,13 +32,25 @@ public class MailPageSteps extends AbstactStep {
         return subject;
     }
 
+    public String sendMessageToUserWithAttach(User user) throws AWTException, InterruptedException {
+        logger.info("write and send message with attach to secondUser");
+        mailPage.composeButtonClick();
+        String subject = "Subject" + RandomString.getRandomStringEng(4);
+        mailPage.typeLogin(user.getLogin());
+        mailPage.typeSubject(subject);
+        mailPage.typeMessage("New message");
+        mailPage.attachButtonClick();
+        mailPage.sendMessageButtonClick();
+        return subject;
+    }
+
     public LoginSteps logOutFromEmailBox() {
         logger.info("log out email box");
         mailPage.generalAccountButtonClick();
         mailPage.logOut();
+
         return new LoginSteps(driver);
     }
-
 
     public MailPageSteps markLetterAsSpam() {
         mailPage.spamFlagBox();
@@ -49,6 +62,11 @@ public class MailPageSteps extends AbstactStep {
     public SpamSteps moveToSpamPage() {
         mailPage.goToSpam();
         return new SpamSteps(driver);
+    }
+
+    public String checkLetterInbox(String subject){
+        mailPage.findLetterInInbox();
+        return subject;
     }
 
     public ForwardPageSteps makeForwarding() throws InterruptedException {
@@ -81,6 +99,5 @@ public class MailPageSteps extends AbstactStep {
     public void getPermission() {
         mailPage.letterFromGmailClick();
         mailPage.linkFromGmailTeamCklick();
-
     }
 }

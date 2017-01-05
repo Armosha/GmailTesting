@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,16 +14,16 @@ public class ForwardPage extends PageObject {
         super(driver);
     }
 
-    @FindBy(xpath = "//a[text()='Пересылка и POP/IMAP']")//Forwarding and POP/IMAP
+    @FindBy(xpath = "//a[text()='Forwarding and POP/IMAP']")//Forwarding and POP/IMAP
     private WebElement forwardingPopImap;
 
-    @FindBy(css = "input[value='Добавить адрес пересылки']") //Add a forwarding address
+    @FindBy(css = "input[value='Add a forwarding address']") //Add a forwarding address
     private WebElement setForwardButton;
 
     @FindBy(xpath = "//div[@class='PN']//input")
     private WebElement forwardingAddressArea;
 
-    @FindBy(xpath = "//button[@name='next' and text()='След.']")
+    @FindBy(xpath = "//button[@name='next' and text()='Next']")
     private WebElement nextStepButton;
 
     @FindBy(xpath = "//input[@type='submit']")
@@ -40,33 +41,35 @@ public class ForwardPage extends PageObject {
     @FindBy(xpath = "//input[@name='sx_em' and @value='1']")
     private WebElement popRadioButton;
 
-    @FindBy(xpath = "//span[@class='e']")
-    private WebElement settingButton;
+    @FindBy(xpath = "//span[@class='e' and text()='creating a filter!']")
+    private WebElement createFilterButton;
 
     @FindBy(xpath = "//input[@class='ZH nr aQa']")
     private WebElement filterFromButton;
 
-    @FindBy(xpath = "//label[text()='Есть прикрепленные файлы']")
+    @FindBy(xpath = "//label[text()='Has attachment']")
     private WebElement checkBoxAttachFileButton;
 
     @FindBy(xpath = "//div[@class='acM']")
     private WebElement createButton;
 
-    @FindBy(xpath = "//label[text()='Удалить']/../input")
+    @FindBy(xpath = "//label[text()='Delete it']/../input")
     private WebElement deleteItButton;
 
 
-    @FindBy(xpath = "//label[text()='Всегда помечать как важное']/../input")
+    @FindBy(xpath = "//label[text()='Always mark it as important']/../input")
     private WebElement importantButton;
 
 
-    @FindBy(xpath = "//div[@role='button' and text()='Создать фильтр']")
+    @FindBy(xpath = "//div[@role='button' and text()='Create filter']")
     private WebElement saveFilterButton;
 
+    @FindBy(xpath = "//button[@name='ok']")
+    private WebElement filterOkButton;
 
 
     public void forwardingPopImapClick() throws InterruptedException {
-        Thread.sleep(3000);
+        wait.waitForElementIsClickable(forwardingPopImap);
         forwardingPopImap.click();
     }
 
@@ -84,16 +87,28 @@ public class ForwardPage extends PageObject {
                 submitButton.click();
                 driver.switchTo().window(nameOfMainWindow);
                 okButton.click();
+                wait.waitForElementIsClickable(logOutFromForwardPageGeneralButton);
+
             }
         }
     }
 
     public void logOutButtonClick() {
+        wait.waitForElementIsClickable(logOutFromForwardPageGeneralButton);
         logOutFromForwardPageGeneralButton.click();
     }
 
     public void logOutFromForwardPage() {
+        wait.waitForElementIsClickable(logOutFromForwardPageButton);
         logOutFromForwardPageButton.click();
+        try {
+            alert = driver.switchTo().alert();
+            String alertText = alert.getText();
+            if (alertText.contains("Your draft has been modified")) {
+                alert.accept();
+            }
+        } catch (NoAlertPresentException e) {
+        }
     }
 
     public void popRadioButtonClick() {
@@ -101,7 +116,7 @@ public class ForwardPage extends PageObject {
     }
 
     public void settingButtonClick() {
-        settingButton.click();
+        createFilterButton.click();
     }
 
     public void fromFilterButton(String login) {
@@ -109,6 +124,7 @@ public class ForwardPage extends PageObject {
         filterFromButton.sendKeys(login);
         checkBoxAttachFileButton.click();
         createButton.click();
+        filterOkButton.click();
         deleteItButton.click();
         importantButton.click();
         saveFilterButton.click();

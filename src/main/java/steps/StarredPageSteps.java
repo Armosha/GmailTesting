@@ -17,7 +17,6 @@ public class StarredPageSteps extends AbstactStep {
 
     public boolean checkLetterInStarred() {
         logger.info("get letters' subject from starred Page");
-        starredPage.takeSubjectFromStarredPage();
-        return true;//TODO
+        return starredPage.takeSubjectFromStarredPage();
     }
 }

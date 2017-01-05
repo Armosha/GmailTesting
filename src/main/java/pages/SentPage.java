@@ -13,7 +13,7 @@ public class SentPage extends PageObject {
         super(driver);
     }
 
-    @FindBy(xpath = "//div[@class='yW' and text()='Кому: ']")
+    @FindBy(xpath = "//div[@class='yW' and text()='To: ']")
     private WebElement messageButton;
 
     @FindBy(xpath = "//div[@class='ajR']")
